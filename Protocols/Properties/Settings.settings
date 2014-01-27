@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Protocols.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GasProtocolNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="DieselProtocolNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="NormaGas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Автотест-02.02П    №15780    24.05.2013г.</Value>
+    </Setting>
+    <Setting Name="NormaDiesel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ДО-1 №21523  16.12.2012 г.</Value>
+    </Setting>
+    <Setting Name="LastUsedMechanicID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
