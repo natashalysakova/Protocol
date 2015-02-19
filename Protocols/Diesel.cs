@@ -14,15 +14,13 @@ namespace Protocols
         public double avgValueMeters { set; get; }
 
 
-        public Diesel(string compName, string gosNumb, string vend, int numb, DateTime dogov, double maxval)
-            : base(compName, gosNumb, vend, numb, dogov, maxval)
+        public Diesel(string compName, string gosNumb, string vend, int numb, DateTime dogov, double maxval, DateTime vypiska)
+            : base (compName, gosNumb, vend, numb, dogov, maxval, vypiska)
         {
             values = new double[6, 2];
             maxValueMeters = (-1.0 / 0.43) * Math.Log(1.0 - (maxValue / 100.0));
 
             DRandom r = new DRandom();
-
-
 
             do
             {

@@ -50,8 +50,8 @@ namespace Protocols
                     Brushes.Black, new PointF(200, i + 20));
 
                 e.Graphics.DrawString(
-                    "Протокол №" + Settings.Default.GasProtocolNumber + " от «" + DateTime.Today.Day + "» " +
-                    GetMonthName(DateTime.Today.Month) + " " + DateTime.Today.Year + "г.",
+                    "Протокол №" + Settings.Default.GasProtocolNumber + " от «" + gasValue.VypiskaDate.Day + "» " +
+                    GetMonthName(gasValue.VypiskaDate.Month) + " " + gasValue.VypiskaDate.Year + "г.",
                     new Font("Times New Roman", 16, FontStyle.Bold), Brushes.Black, new PointF(220, i + 60));
 
 
@@ -165,8 +165,8 @@ namespace Protocols
                     Brushes.Black, new PointF(200, i + 20));
 
                 e.Graphics.DrawString(
-                    "Протокол №" + Settings.Default.DieselProtocolNumber + " от «" + DateTime.Today.Day + "» " +
-                    GetMonthName(DateTime.Today.Month) + " " + DateTime.Today.Year + "г.",
+                    "Протокол №" + Settings.Default.DieselProtocolNumber + " от «" + dieselValue.VypiskaDate.Day + "» " +
+                    GetMonthName(dieselValue.VypiskaDate.Month) + " " + dieselValue.VypiskaDate.Year + "г.",
                     new Font("Times New Roman", 16, FontStyle.Bold), Brushes.Black, new PointF(220, i + 40));
 
 
@@ -341,6 +341,8 @@ namespace Protocols
 
             Text = "Протокол №" + Settings.Default.GasProtocolNumber + " - " +
                    tabControl1.SelectedTab.Text.Substring(0, 6);
+
+            dateTimePicker1.Value = dateTimePicker2.Value = GasDogDate.Value = DieselDogDate.Value = DateTime.Today;
             //this.reportViewer1.RefreshReport();
         }
 
@@ -383,7 +385,7 @@ namespace Protocols
 
             if (gasValue == null && MyGasValidate())
                 gasValue = new Gas(GasCompName.Text, GasNewNumb.Text + GasOldNumb.Text, GasModel.Text,
-                    Convert.ToInt32(GasDogNumb.Text), GasDogDate.Value, GasSelectedValue);
+                    Convert.ToInt32(GasDogNumb.Text), GasDogDate.Value, GasSelectedValue, dateTimePicker1.Value);
 
             if (gasValue != null)
             {
@@ -396,12 +398,20 @@ namespace Protocols
             gasValue = null;
             if (MyGasValidate())
                 gasValue = new Gas(GasCompName.Text, GasNewNumb.Text + GasOldNumb.Text, GasModel.Text,
-                    Convert.ToInt32(GasDogNumb.Text), GasDogDate.Value, GasSelectedValue);
+                    Convert.ToInt32(GasDogNumb.Text), GasDogDate.Value, GasSelectedValue, dateTimePicker1.Value);
 
             if (gasValue != null)
             {
                 prewiewPrintDialog.Document = printGasDoc;
-                prewiewPrintDialog.ShowDialog();
+                try
+                {
+                    prewiewPrintDialog.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("В системе не найдено установленных принтеров", "Ошибка", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -411,12 +421,20 @@ namespace Protocols
 
             if (MyDieselValidate())
                 dieselValue = new Diesel(DieselCompName.Text, DieselNewNumb.Text + DieselOldNumb.Text, DieselModel.Text,
-                    Convert.ToInt32(DieselDogNumb.Text), DieselDogDate.Value, DieselSelectedValue);
+                    Convert.ToInt32(DieselDogNumb.Text), DieselDogDate.Value, DieselSelectedValue, dateTimePicker2.Value);
 
             if (dieselValue != null)
             {
                 prewiewPrintDialog.Document = printDieselDoc;
-                prewiewPrintDialog.ShowDialog();
+                try
+                {
+                    prewiewPrintDialog.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("В системе не найдено установленных принтеров", "Ошибка", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -426,7 +444,7 @@ namespace Protocols
 
             if (dieselValue == null && MyDieselValidate())
                 dieselValue = new Diesel(DieselCompName.Text, DieselNewNumb.Text + DieselOldNumb.Text, DieselModel.Text,
-                    Convert.ToInt32(DieselDogNumb.Text), DieselDogDate.Value, DieselSelectedValue);
+                    Convert.ToInt32(DieselDogNumb.Text), DieselDogDate.Value, DieselSelectedValue, dateTimePicker2.Value);
 
             if (dieselValue != null)
             {
@@ -550,7 +568,7 @@ namespace Protocols
                 }
 
                 gasValue = new Gas(GasCompName.Text, GasNewNumb.Text + GasOldNumb.Text, GasModel.Text,
-      dogNumb, GasDogDate.Value, GasSelectedValue);
+      dogNumb, GasDogDate.Value, GasSelectedValue, dateTimePicker1.Value);
                 printDialog1.Document = printGasDoc;
                 printDialog1.ShowDialog();
 
@@ -568,7 +586,7 @@ namespace Protocols
                 {
                 }
                 dieselValue = new Diesel(DieselCompName.Text, DieselNewNumb.Text + DieselOldNumb.Text, DieselModel.Text,
-                       dogNumb, DieselDogDate.Value, DieselSelectedValue);
+                       dogNumb, DieselDogDate.Value, DieselSelectedValue, dateTimePicker2.Value);
                 printDialog1.Document = printDieselDoc;
                 printDialog1.ShowDialog();
             }

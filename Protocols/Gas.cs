@@ -9,8 +9,8 @@ namespace Protocols
     public class Gas : Mesure
     {
 
-        public Gas(string compName, string gosNumb, string vend, int numb, DateTime dogov, double maxval)
-            : base(compName, gosNumb, vend, numb, dogov, maxval)
+        public Gas(string compName, string gosNumb, string vend, int numb, DateTime dogov, double maxval, DateTime vypiska)
+            : base(compName, gosNumb, vend, numb, dogov, maxval, vypiska)
         {
             values = new double[6, 1];
             DRandomLib.DRandom r = new DRandomLib.DRandom();

@@ -21,8 +21,10 @@ namespace Protocols
 
         public double[,] values;
 
+        public DateTime VypiskaDate { set; get; }
 
-        public Mesure(string compName, string gosNumb, string vend, int numb, DateTime dogov, double maxval)
+
+        public Mesure(string compName, string gosNumb, string vend, int numb, DateTime dogov, double maxval, DateTime vypiska)
         {
             CompanyName = compName;
             GosNumber = gosNumb;
@@ -30,6 +32,7 @@ namespace Protocols
             DogovorNumber = numb;
             DogovorDate = dogov;
             maxValue = maxval;
+            VypiskaDate = vypiska;
         }
 
     }

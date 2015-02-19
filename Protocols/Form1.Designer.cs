@@ -88,6 +88,10 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -129,13 +133,15 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(506, 404);
+            this.tabControl1.Size = new System.Drawing.Size(506, 432);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.CausesValidation = false;
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.toolStrip2);
             this.tabPage1.Controls.Add(this.GasNewNumb);
             this.tabPage1.Controls.Add(this.GasCOValue);
@@ -155,7 +161,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(498, 371);
+            this.tabPage1.Size = new System.Drawing.Size(498, 399);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Бензиновый";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -172,7 +178,7 @@
             this.toolStrip2.Location = new System.Drawing.Point(463, 3);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip2.Size = new System.Drawing.Size(32, 365);
+            this.toolStrip2.Size = new System.Drawing.Size(32, 393);
             this.toolStrip2.TabIndex = 9;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -326,7 +332,7 @@
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button3.CausesValidation = false;
-            this.button3.Location = new System.Drawing.Point(222, 322);
+            this.button3.Location = new System.Drawing.Point(222, 350);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 38);
             this.button3.TabIndex = 7;
@@ -338,7 +344,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.CausesValidation = false;
-            this.button1.Location = new System.Drawing.Point(12, 322);
+            this.button1.Location = new System.Drawing.Point(12, 350);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 38);
             this.button1.TabIndex = 6;
@@ -370,7 +376,7 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.CausesValidation = false;
-            this.button2.Location = new System.Drawing.Point(330, 322);
+            this.button2.Location = new System.Drawing.Point(330, 350);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 38);
             this.button2.TabIndex = 8;
@@ -381,12 +387,12 @@
             // GasDogDate
             // 
             this.GasDogDate.CausesValidation = false;
+            this.GasDogDate.Checked = false;
             this.GasDogDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.GasDogDate.Location = new System.Drawing.Point(273, 40);
             this.GasDogDate.Name = "GasDogDate";
             this.GasDogDate.Size = new System.Drawing.Size(160, 26);
             this.GasDogDate.TabIndex = 1;
-            this.GasDogDate.Value = new System.DateTime(2013, 11, 1, 0, 0, 0, 0);
             // 
             // GasCompName
             // 
@@ -409,6 +415,8 @@
             // tabPage2
             // 
             this.tabPage2.CausesValidation = false;
+            this.tabPage2.Controls.Add(this.dateTimePicker2);
+            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.toolStrip3);
             this.tabPage2.Controls.Add(this.DieselNewNumb);
             this.tabPage2.Controls.Add(this.DieselNoiseValue);
@@ -428,7 +436,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(498, 371);
+            this.tabPage2.Size = new System.Drawing.Size(498, 399);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Дизельный";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -445,7 +453,7 @@
             this.toolStrip3.Location = new System.Drawing.Point(463, 3);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip3.Size = new System.Drawing.Size(32, 365);
+            this.toolStrip3.Size = new System.Drawing.Size(32, 393);
             this.toolStrip3.TabIndex = 9;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -561,7 +569,7 @@
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button4.CausesValidation = false;
-            this.button4.Location = new System.Drawing.Point(222, 322);
+            this.button4.Location = new System.Drawing.Point(222, 350);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 38);
             this.button4.TabIndex = 7;
@@ -573,7 +581,7 @@
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button5.CausesValidation = false;
-            this.button5.Location = new System.Drawing.Point(12, 322);
+            this.button5.Location = new System.Drawing.Point(12, 350);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(204, 38);
             this.button5.TabIndex = 6;
@@ -605,7 +613,7 @@
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button6.CausesValidation = false;
-            this.button6.Location = new System.Drawing.Point(330, 322);
+            this.button6.Location = new System.Drawing.Point(330, 350);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(103, 38);
             this.button6.TabIndex = 8;
@@ -720,11 +728,51 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(86, 24);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.CausesValidation = false;
+            this.label11.Location = new System.Drawing.Point(101, 322);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 20);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Дата выписки";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CausesValidation = false;
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(222, 317);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(160, 26);
+            this.dateTimePicker1.TabIndex = 17;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CausesValidation = false;
+            this.dateTimePicker2.Checked = false;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(222, 317);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(160, 26);
+            this.dateTimePicker2.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.CausesValidation = false;
+            this.label12.Location = new System.Drawing.Point(101, 322);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 20);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Дата выписки";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 444);
+            this.ClientSize = new System.Drawing.Size(530, 472);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -815,6 +863,10 @@
         private System.Windows.Forms.ToolStripButton button;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label12;
 
     }
 }
